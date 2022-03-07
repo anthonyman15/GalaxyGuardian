@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 558735898}
   m_Layer: 0
   m_Name: Environment
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1805,7 +1805,7 @@ GameObject:
   - component: {fileID: 615849306}
   m_Layer: 0
   m_Name: Shoot
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2150,7 +2150,7 @@ GameObject:
   - component: {fileID: 825741464}
   m_Layer: 0
   m_Name: BottomWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11292,7 +11292,7 @@ GameObject:
   - component: {fileID: 1290387825}
   m_Layer: 0
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13093,7 +13093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 615849306}
-  bulletPrefab: {fileID: 7222579963551149857, guid: 1cb8dfaeb3b0b92499988f9818f4457e, type: 3}
+  bulletPrefab: {fileID: 1323500718963112291, guid: 1cb8dfaeb3b0b92499988f9818f4457e, type: 3}
   joybutton: {fileID: 348278459}
   bulletForce: 20
   autoFire: 1
