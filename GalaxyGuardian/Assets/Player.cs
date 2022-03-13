@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     public float playerSpeed;
     public float rotationSpeed;
     public GameObject Object;
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100f;
+    public float currentHealth;
     public HealthBar healthBar;
 
     private Rigidbody2D rb;
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(currentHealth,maxHealth);
     }
 
     void FixedUpdate()
@@ -48,16 +48,21 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+/*        if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-        }
+        }*/
+    }
+
+    public void UpdateHealth(float mod)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + mod, 0, maxHealth);
     }
 
     // Damage taken from enemy
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth = Mathf.Max(0, currentHealth - damage);
         healthBar.SetHealth(currentHealth);
     }
 }
