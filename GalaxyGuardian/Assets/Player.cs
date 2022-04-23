@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,14 +14,16 @@ public class Player : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
     public HealthBar healthBar;
-
     private Rigidbody2D rb;
+
+    public static event Action OnPlayerDeath;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(currentHealth,maxHealth);
+        EnablePlayerMovement();
     }
 
     void FixedUpdate()
@@ -46,23 +49,35 @@ public class Player : MonoBehaviour
         
     }
 
-    void Update()
+    private void OnEnable()
     {
-/*        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }*/
+        Player.OnPlayerDeath += DisablePlayerMovement;
     }
 
+    private void OnDisable()
+    {
+        Player.OnPlayerDeath -= DisablePlayerMovement;
+    }
     public void UpdateHealth(float mod)
     {
         currentHealth = Mathf.Clamp(currentHealth + mod, 0, maxHealth);
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("Player Died");
+            OnPlayerDeath?.Invoke();
+            DisablePlayerMovement();
+        }
     }
 
-    // Damage taken from enemy
-    void TakeDamage(int damage)
+    private void DisablePlayerMovement()
     {
-        currentHealth = Mathf.Max(0, currentHealth - damage);
-        healthBar.SetHealth(currentHealth);
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    private void EnablePlayerMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

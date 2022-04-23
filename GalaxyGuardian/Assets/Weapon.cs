@@ -78,55 +78,6 @@ public class Weapon : MonoBehaviour
             }
         }
     }
-    /*
-    void Update()
-    {
-
-
-        if (fire && !joybutton.Pressed)
-        {
-            fire = false;
-
-        }
-        if (!fire && joybutton.Pressed)
-        {
-            fire = true;
-
-        }
-
-
-        
-        refireTime = Mathf.Max(0, refireTime - 1);
-        if (reloadTime > 0)
-        {
-            reloadTime = Mathf.Max(0, reloadTime - 1);
-            if(reloadTime == 0)
-            {
-                currentAmmo = maxAmmo;
-            }
-        }
-
-        if (fire && reloadTime == 0)
-        {
-            if (currentAmmo == 0)
-            {
-                reloadTime = 60 * 2;
-            }
-            else if (refireTime == 0)
-            {
-                refireTime = 50;
-                Shoot();
-
-                if (currentAmmo > 0)
-                    currentAmmo--;
-            }
-        }
-
-        
-
-
-    }
-    */
 
     //Shooting
     public void Shoot()
@@ -137,20 +88,6 @@ public class Weapon : MonoBehaviour
         rb.AddForce(shoot.up * bulletForce, ForceMode2D.Impulse);
         //fix fire direction back into the right direction
         rb.velocity = bulletForce * transform.up;
-        Debug.Log("shoot");
+        /*Debug.Log("shoot");*/
     }
-
-/*    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag.Equals("Enemy"))
-        {
-            Debug.Log("destroy");
-            Destroy(gameObject);
-        }
-
-    }*/
-
-
-
-
 }

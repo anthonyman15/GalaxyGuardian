@@ -11,13 +11,17 @@ public class Bullet : MonoBehaviour
         {
             /*Destroy(coll.gameObject);*/
             Enemy enemy = coll.GetComponent<Enemy>();
+            
             enemy.enemyHp = Mathf.Max(0, enemy.enemyHp - damage);
+            
             if(enemy.enemyHp == 0)
             {
                 Destroy(coll.gameObject);
+                Score.scoreValue += 10;
             }
         }
         Destroy(gameObject);
+        
     }
 }
     
