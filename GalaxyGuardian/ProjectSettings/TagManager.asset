@@ -7,9 +7,6 @@ TagManager:
   - Enemy
   - Bullet
   - Wall
-  - Enemy2
-  - Event
-  - Shop
   layers:
   - Default
   - TransparentFX

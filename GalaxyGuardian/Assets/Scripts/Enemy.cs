@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -51,8 +50,9 @@ public class Enemy : MonoBehaviour
         {
             Player player = coll.GetComponent<Player>();
             player.UpdateHealth(-attackDamage);
-            
+
             Debug.Log("Hit Player");
         }
+
     }
 }
