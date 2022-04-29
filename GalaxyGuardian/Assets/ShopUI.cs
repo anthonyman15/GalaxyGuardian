@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopUI : MonoBehaviour
 {
     //Check shop is opened
-    public bool isOpen = false;
+    public static bool isOpen = false;
     public GameObject itemPrefab;
 
     //Upgrade
@@ -15,10 +15,11 @@ public class ShopUI : MonoBehaviour
         {"Damage","Damage Upgrade","10" }
     };
 
-    public Dictionary<string, int> upgradePurchase = new Dictionary<string, int>();
+    public static Dictionary<string, int> upgradePurchase = new Dictionary<string, int>();
 
     void Start()
     {
+        upgradePurchase.Clear();
         Debug.Log("Start Shop");
         GameObject shopMenu = GameObject.Find("ShopMenu");
         for (int i = 0; i < array2D.GetLength(0); i++)

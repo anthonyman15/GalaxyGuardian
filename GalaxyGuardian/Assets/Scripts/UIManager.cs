@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject gameOverMenu;
     public GameObject warnTimeMenu;
+    
+    public GameObject shopMenu;
 
     private void OnEnable()
     {
@@ -18,6 +20,10 @@ public class UIManager : MonoBehaviour
     {
         Player.OnPlayerDeath -= EnableGameOverMenu;
         MainMenu.OnWarnTime -= EnableWarnTimeMenu;
+    }
+    
+    public void closeWarnTimeMenu(){
+        warnTimeMenu.SetActive(false);
     }
 
     public void EnableGameOverMenu()
@@ -34,12 +40,16 @@ public class UIManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void EnableWarnTimeMenu()
     {
         warnTimeMenu.SetActive(true);
+    }
+    
+    public void EnableShopMenu(){
+        
     }
 
     public void RestartTimer()
@@ -55,5 +65,8 @@ public class UIManager : MonoBehaviour
             Debug.Log("You should stop playing!!!");
             EnableWarnTimeMenu();
         }
+        if(ShopUI.isOpen == true){
+            shopMenu.SetActive(true);
+        }else shopMenu.SetActive(false);
     }
 }
