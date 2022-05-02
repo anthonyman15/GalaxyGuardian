@@ -15,8 +15,9 @@ public class ShopUI : MonoBehaviour
         {"Damage","Damage Upgrade","10" }
     };
 
+    // public static Dictionary<string, int> upgradePurchase = new Dictionary<string, int>();
+    
     public static Dictionary<string, int> upgradePurchase = new Dictionary<string, int>();
-
     void Start()
     {
         upgradePurchase.Clear();
@@ -25,7 +26,7 @@ public class ShopUI : MonoBehaviour
         for (int i = 0; i < array2D.GetLength(0); i++)
         {
             upgradePurchase.Add(array2D[i, 0], 0);
-            var item = Instantiate(itemPrefab, shopMenu.transform.position, Quaternion.identity).GetComponent<ShopItem>();
+            var item = GameObject.Instantiate(itemPrefab, shopMenu.transform.position, Quaternion.identity).GetComponent<ShopItem>();
             item.itemName = array2D[i, 0];
             item.itemDesc = array2D[i, 1];
             item.price = int.Parse(array2D[i, 2]);
@@ -61,11 +62,7 @@ public class ShopUI : MonoBehaviour
         {
             ShopClose();
             Debug.Log("Shop Close");
-
-            new Player().maxHealth = 100 + (upgradePurchase["Health"] * 20);
-
         }
     }
-
 
 }

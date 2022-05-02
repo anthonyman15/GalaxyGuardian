@@ -36,20 +36,22 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         WaveCounter.waveCounter = 0;
         Score.scoreValue = 0;
+        GameOverScore.scoreValue = 0;
+        GameOverWave.waveCounter = 0;
     }
 
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MenuScene");
+        WaveCounter.waveCounter = 0;
+        Score.scoreValue = 0;
+        GameOverScore.scoreValue = 0;
+        GameOverWave.waveCounter = 0;
     }
 
     public void EnableWarnTimeMenu()
     {
         warnTimeMenu.SetActive(true);
-    }
-    
-    public void EnableShopMenu(){
-        
     }
 
     public void RestartTimer()

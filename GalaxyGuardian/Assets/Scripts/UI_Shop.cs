@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UI_Shop : MonoBehaviour
 {
-    private Transform container;
-    private Transform shopItemTemplate;
+    public Transform container;
+    public Transform shopItemTemplate;
 
-    private void Awake()
+    public void Awake()
     {
         //Reference for Container
         container = transform.Find("container");

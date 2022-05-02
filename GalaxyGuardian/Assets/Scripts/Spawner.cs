@@ -61,6 +61,7 @@ public class Spawner : MonoBehaviour
         
         wave++;
         WaveCounter.waveCounter += 1;
+        GameOverWave.waveCounter += 1;
         if (wave > 0 && wave% waveBeforeNextType == 0)
         {
             currentEnemy++;

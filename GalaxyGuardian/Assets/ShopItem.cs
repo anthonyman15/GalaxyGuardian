@@ -11,7 +11,7 @@ public class ShopItem : MonoBehaviour
     public GameObject nameLabel;
     public GameObject priceLabel;
 
-    public void Start()
+    void Start()
     {
         nameLabel.GetComponent<Text>().text = itemName;
         priceLabel.GetComponent<Text>().text = price.ToString();

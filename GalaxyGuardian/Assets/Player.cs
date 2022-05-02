@@ -30,27 +30,37 @@ public class Player : MonoBehaviour
     //Upgrade Health
     public void updateHealth(){
         int health = ShopUI.upgradePurchase["Health"];
-        //Check cap level
         ShopUI.upgradePurchase["Health"] = health == 10? health:health+1;
-        maxHealth += 5;
-        currentHealth = maxHealth;
-        Score.scoreValue -= 10;
+        //Check cap level
+        if(Score.scoreValue > 0 && health <= 10){
+            maxHealth += 5;
+            currentHealth = maxHealth;
+            Score.scoreValue -= 10;
+            Debug.Log("Health Purchased");
+        }
     }
     
     //Upgrade Speed
     public void updateSpeed(){
-        ShopUI.upgradePurchase["Speed"] += ShopUI.upgradePurchase["Speed"] == 5? 0:1;
-        playerSpeed += 1;
-        //Check earn score
-        Score.scoreValue -= 10;
-        Debug.Log("Speed Purchased");
+        int speed = ShopUI.upgradePurchase["Speed"];
+        ShopUI.upgradePurchase["Speed"] = speed == 5? speed:speed+1;
+        if(Score.scoreValue > 0 && speed <= 5){
+            playerSpeed += 1;
+            //Check earn score
+            Score.scoreValue -= 10;
+            Debug.Log("Speed Purchased");
+        }
     }
     
     //Upgrade Damage
     public void updateDamage(){
-        ShopUI.upgradePurchase["Damage"] += ShopUI.upgradePurchase["Damage"] == 5? 0:1;
-        Score.scoreValue -= 10;
-        Bullet.damage += 5;
+        int damage = ShopUI.upgradePurchase["Damage"];
+        ShopUI.upgradePurchase["Damage"] = damage == 5? damage:damage+1;
+        if(Score.scoreValue > 0 && damage <= 5){
+            Score.scoreValue -= 10;
+            Bullet.damage += 5;
+            Debug.Log("Damage Purchased");
+        }
     }
 
     void FixedUpdate()

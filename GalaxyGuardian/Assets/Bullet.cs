@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(coll.gameObject);
                 Score.scoreValue += 10;
+                GameOverScore.scoreValue += 10;
             }
         }
         Destroy(gameObject);
