@@ -29,6 +29,9 @@ public class ShopItem : MonoBehaviour
             case "Damage":
             player.updateDamage();
             break;
+            case "Purchase Health":
+            player.purchaseHealth();
+            break;
         }
     }
 }

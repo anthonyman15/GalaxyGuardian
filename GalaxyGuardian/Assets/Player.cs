@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
         //Check cap level
         if(Score.scoreValue > 0 && health <= 10){
             maxHealth += 5;
-            currentHealth = maxHealth;
+            // currentHealth = maxHealth;
             Score.scoreValue -= 10;
-            Debug.Log("Health Purchased");
+            healthBar.SetMaxHealth(currentHealth,maxHealth);
+            Debug.Log("Health Upgrade Purchased");
         }
     }
     
@@ -55,13 +56,25 @@ public class Player : MonoBehaviour
     //Upgrade Damage
     public void updateDamage(){
         int damage = ShopUI.upgradePurchase["Damage"];
-        ShopUI.upgradePurchase["Damage"] = damage == 5? damage:damage+1;
-        if(Score.scoreValue > 0 && damage <= 5){
+        ShopUI.upgradePurchase["Damage"] = damage == 10? damage:damage+1;
+        if(Score.scoreValue > 0 && damage <= 10){
             Score.scoreValue -= 10;
             Bullet.damage += 5;
             Debug.Log("Damage Purchased");
         }
     }
+    
+    //Purchase Health
+    public void purchaseHealth(){
+        int health = ShopUI.upgradePurchase["Purchase Health"];
+        ShopUI.upgradePurchase["Purchase Health"] = health == 0? health:health++;
+        if(Score.scoreValue > 0 && currentHealth < maxHealth){
+            Score.scoreValue -= 10;
+            currentHealth += 5;
+            healthBar.SetMaxHealth(currentHealth,maxHealth);
+            Debug.Log("Health Purchased");
+        }
+    }   
 
     void FixedUpdate()
     {

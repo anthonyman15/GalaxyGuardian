@@ -247,7 +247,7 @@ MonoBehaviour:
   enemyHp: 120
   player: {fileID: 0}
   moveSpeed: 6
-  attackDamage: 15
+  attackDamage: 20
   attackSpeed: 1
   canAttack: 0
 --- !u!1 &4897255730016409338

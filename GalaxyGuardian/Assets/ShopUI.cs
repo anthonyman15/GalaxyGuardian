@@ -12,7 +12,8 @@ public class ShopUI : MonoBehaviour
     string[,] array2D = new string[,] {
         {"Health", "Health Upgrade","10"},
         {"Speed","Speed Upgrade","10" },
-        {"Damage","Damage Upgrade","10" }
+        {"Damage","Damage Upgrade","10" },
+        {"Purchase Health", "Purchase Health", "10"}
     };
 
     // public static Dictionary<string, int> upgradePurchase = new Dictionary<string, int>();

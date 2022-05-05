@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        float delta_factor = 1;
+        float delta_factor = 7;
 
         if (fire && !joybutton.Pressed)
         {
@@ -59,7 +59,6 @@ public class Weapon : MonoBehaviour
                 currentAmmo = maxAmmo;
             }
         }
-
 
         if (fire && reloadTime == 0)
         {

@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     private Transform WorldSize;
     private float timeBtwSpawns;
     public float startTimeBtwSpawns;
-    public int wave = -1;
+    public int wave = 1;
 
     private int waveSize = 0;
     public int waveSizeInc = 2;

@@ -21,8 +21,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         StartTime = Time.realtimeSinceStartup;
-        /*WarnTime = StartTime + 5;*/
-        WarnTime = StartTime + (10 * 60);
+        WarnTime = StartTime + 5;
+        // WarnTime = StartTime + (10 * 60);
     }
     public void GoToSettingMenu()
     {
@@ -37,10 +37,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
-    }
-
-    void Update()
-    {
-
     }
 }
