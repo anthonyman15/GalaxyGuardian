@@ -12,4 +12,4 @@ The game system is designed using an Object-Oriented Programming (OOP) alongside
 There are multiple options available in the main menu, there are "**Play**", "**Help**", "**Credits**" and "**Quit**". Each options contain it's unique functions as it stated.
 
 ## Game Begin
-In order to start the game, player needs to press "**Play**" to process to the next scene, which to the gameplay scene. After entered the game scene, there are some visable elements on screen that represents different components. Health bar represent the character's health, using gradient color to meansure its health bar where allocates to the set health precentage.
+In order to start the game, player needs to press "**Play**" to process to the next scene, which to the gameplay scene. After entered the game scene, there are some visable elements on screen that represents different components. Health bar represent the character's health, using gradient color to meansure its health bar where allocates to the set health precentage. There are 3 colours
