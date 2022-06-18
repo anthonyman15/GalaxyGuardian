@@ -1,5 +1,5 @@
 # GalaxyGuardian
-Ka Pui Man's Final Year Project, Galaxy Guardian
+Ka Pui Man's Final Year Project, Galaxy Guardian.
 
 ## Introduction
 This project aims to demonstrate my abilities of my previous study years. I am always interested in computer video games and wanted to develop one. Therefore, I believe this is my opportunity to challenge myself as my final year project idea. I am a software engineering student and experienced programming in my previous studies, but never in computer games. This is my first time experience Unity, it was not easy to master, but relatively speaking, I would've to say this project was enjoyable overall, thankfully my supervisor provided lots of advice to me regarding the features and abilities that Unity assists many beginner video game developers, such as its community and asset store.
@@ -12,4 +12,4 @@ The game system is designed using an Object-Oriented Programming (OOP) alongside
 There are multiple options available in the main menu, there are "**Play**", "**Help**", "**Credits**" and "**Quit**". Each options contain it's unique functions as it stated.
 
 ## Game Begin
-In order to start the game, player needs to press "**Play**" to process to the next scene, which to the gameplay scene. After entered the game scene, there are some visable elements on screen that represents different components. Health bar represent the character's health,
+In order to start the game, player needs to press "**Play**" to process to the next scene, which to the gameplay scene. After entered the game scene, there are some visable elements on screen that represents different components. Health bar represent the character's health, using gradient color to meansure its health bar where allocates to the set health precentage.
